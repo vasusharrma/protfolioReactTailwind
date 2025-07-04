@@ -1,0 +1,9 @@
+.primary__main::before {
+  content: "";
+  background-image: url("/home/vasu/again/reactDoc/portfolio/src/Assets/home-bg.jpg");
+  position: absolute;
+  background-repeat: no-repeat;
+  inset: 0;
+  opacity: 0.1;
+  z-index: -1;
+}
