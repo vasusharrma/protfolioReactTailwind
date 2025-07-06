@@ -26,7 +26,7 @@ function Navbar() {
       <nav
         className={` top-0 left-0 w-full z-100 bg-[#181A27] text-xl py-6 transition-all duration-300 ease-linear  ${
           scrolled
-            ? "md:bg-[hsl(0_100%_0%_/_0.2)] md:backdrop-blur-3xl fixed "
+            ? "md:bg-[hsl(0_100%_0%_/_0.2)] md:backdrop-blur-3xl sticky top-0 "
             : "md:bg-transparent"
         }`}
       >
