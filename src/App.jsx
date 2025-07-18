@@ -4,9 +4,9 @@ import "./style.css";
 
 function App() {
   return (
-    <div className="h-[200vh]  text-white">
+    <div className=" text-white relative -mt-28 ">
       <Hii />
-      <Intro/>
+      <Intro />
     </div>
   );
 }
