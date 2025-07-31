@@ -6,6 +6,7 @@ import {
 } from "react-icons/ai";
 import { CgGitFork } from "react-icons/cg";
 import { CgFileDocument } from "react-icons/cg";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function Navbar() {
@@ -24,7 +25,7 @@ function Navbar() {
   return (
     <>
       <nav
-        className={` sticky top-0 left-0 w-full z-100  bg-[#0A0416] md:bg-transparent text-white text-xl py-6  transition-all duration-300 ease-linear   ${
+        className={` sticky top-0 left-0 w-full z-100  bg-[#0A0416] md:bg-transparent text-white text-xl py-5  transition-all duration-300 ease-linear   ${
           scrolled ? "md:bg-[hsl(0_100%_0%_/_0.2)]   md:backdrop-blur-3xl " : ""
         }`}
       >
@@ -41,15 +42,20 @@ function Navbar() {
               open ? "h-auto mt-7" : " h-0 overflow-hidden md:h-auto  "
             }`}
           >
-            <li className="flex relative md:flex-col cursor-pointer lg:flex-row items-center gap-1 after:absolute after:left-0 after:bottom-[-5px] md:after:h-[5px] after:w-0 after:bg-[#CD5FF8] after:transition-all after:duration-300 hover:after:w-full  after:rounded-xl">
-              <AiOutlineHome />
-              Home
-            </li>
-            <li className="relative flex md:flex-col lg:flex-row cursor-pointer items-center gap-1 after:absolute after:left-0 after:bottom-[-5px] md:after:h-[5px] after:w-0 after:bg-[#CD5FF8] after:transition-all after:duration-300 hover:after:w-full after:rounded-xl">
-              {" "}
-              <AiOutlineUser />
-              About
-            </li>
+            <Link to="/" onClick={() => setOpen(false)}>
+              <li className="flex relative md:flex-col cursor-pointer lg:flex-row items-center gap-1 after:absolute after:left-0 after:bottom-[-5px] md:after:h-[5px] after:w-0 after:bg-[#CD5FF8] after:transition-all after:duration-300 hover:after:w-full  after:rounded-xl">
+                <AiOutlineHome />
+                Home
+              </li>
+            </Link>
+
+            <Link to="/about" onClick={() => setOpen(false)}>
+              <li className="relative flex md:flex-col lg:flex-row cursor-pointer items-center gap-1 after:absolute after:left-0 after:bottom-[-5px] md:after:h-[5px] after:w-0 after:bg-[#CD5FF8] after:transition-all after:duration-300 hover:after:w-full after:rounded-xl">
+                {" "}
+                <AiOutlineUser />
+                About
+              </li>
+            </Link>
             <li className="relative flex md:flex-col lg:flex-row items-center cursor-pointer gap-1 after:absolute after:left-0 after:bottom-[-5px] md:after:h-[5px] after:w-0 after:bg-[#CD5FF8] after:transition-all after:duration-300 hover:after:w-full after:rounded-xl">
               <AiOutlineFundProjectionScreen />
               Project
@@ -65,7 +71,9 @@ function Navbar() {
           </ul>
           <div
             className="space-y-1 absolute top-8 right-[8%]  cursor-pointer md:hidden"
-            onClick={() => setOpen(!open)}
+            onClick={() => {
+              setOpen(!open);
+            }}
           >
             <span
               className={`block h-1 w-8 bg-[#C770F0] transition-transform duration-300 ease-linear  ${
@@ -88,11 +96,6 @@ function Navbar() {
           </div>
         </div>
       </nav>
-      <div className="">
-        <span className=""></span>
-        <span className=""></span>
-        <span className=""></span>
-      </div>
     </>
   );
 }
